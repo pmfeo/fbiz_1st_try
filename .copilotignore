@@ -1,0 +1,6 @@
+# Files to exclude from Copilot context
+node_modules/
+build/
+dist/
+# Include context files with !
+!.copilot/prompts/

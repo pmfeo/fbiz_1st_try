@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Apply Copilot Context",
+            "type": "shell",
+            "command": "echo 'Loading Copilot context from .copilot/prompts/default.md'",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+// {
+//     "key": "ctrl+alt+.",
+//     "command": "github.copilot.applyPromptFromFile",
+//     "args": "${workspaceFolder}/.vscode/prompts/default.prompt"
+// }
