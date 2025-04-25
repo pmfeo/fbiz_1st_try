@@ -1,5 +1,5 @@
-// {
-//   "github.copilot.editor.enablePromptFeatures": true,
-//   "github.copilot.defaultPromptDirectory": "${workspaceFolder}/.vscode/prompts",
-//   "github.copilot.defaultPrompt": "default.prompt"
-// }
+{
+    "github.copilot.editor.enablePromptFeatures": true,
+    "github.copilot.defaultPromptDirectory": "${workspaceFolder}/.github/prompts",
+    "github.copilot.defaultPrompt": "default.prompt.md"
+}

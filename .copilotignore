@@ -4,3 +4,4 @@ build/
 dist/
 # Include context files with !
 !.copilot/prompts/
+!.github/prompts/
