@@ -2,7 +2,7 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     """Application settings."""
-    APP_NAME: str = "Forecaster.biz API"
+    APP_NAME: str = "Fbiz clone API"
     DEBUG: bool = False
     SUPABASE_URL: str
     SUPABASE_KEY: str
