@@ -1,5 +1,6 @@
 .venv/
 .vscode/
+**/.vscode/
 .github/
 __pycache__/
 .env

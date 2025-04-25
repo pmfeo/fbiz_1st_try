@@ -36,3 +36,17 @@ def test_read_root_invalid_path():
     """
     response = client.get("/nonexistent")
     assert response.status_code == 404
+
+def test_health_check():
+    """
+    Test the health check endpoint.
+    
+    Tests:
+        - Status code is 200
+        - Response contains healthy status
+        - Response is JSON format
+    """
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "healthy"}
+    assert response.headers["content-type"] == "application/json"
