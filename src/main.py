@@ -11,3 +11,13 @@ async def root():
         dict: A simple hello world message
     """
     return {"message": "Hello World"}
+
+@app.get("/health")
+async def health_check():
+    """
+    Health check endpoint for container orchestration.
+
+    Returns:
+        dict: Status of the application
+    """
+    return {"status": "healthy"}
