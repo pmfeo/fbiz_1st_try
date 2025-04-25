@@ -11,12 +11,12 @@ This documentation refers only to the Backend side of the application.
 ## Technical Stack
 
 ### Backend
-- Python 3.x
+- Python 3.x (with venv and unicorn)
 - FastAPI - For building high-performance REST API
 - Supabase - As the database and authentication provider
 - Pydantic - For data validation and serialization
 - Docker/Docker-compose - For containerization and deployment
-- AWS as a Cloud server and hosting solution.
+<!-- - AWS as a Cloud server and hosting solution. -->
 
 ### Architecture Decisions
 1. **API-First Approach**: RESTful API design using FastAPI with automatic OpenAPI documentation
