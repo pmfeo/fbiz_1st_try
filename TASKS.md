@@ -8,8 +8,10 @@
 
 2. [ ] Database Setup
    - [x] Create Supabase project
-   - [ ] Design initial database schema
-   - [ ] Set up database migrations
+   - [x] Design initial database schema
+   - [ ]Create database migrations (using a tool like Alembic)
+   - [ ] Set up SQLAlchemy models in the FastAPI application
+   - [ ] Create initial seed data for testing
 
 3. [ ] Core Infrastructure
    - [ ] Configure FastAPI application

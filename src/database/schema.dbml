@@ -1,0 +1,98 @@
+// Companies - Main reference table
+Table companies {
+  id uuid [pk, default: `gen_random_uuid()`]
+  ticker varchar(10) [unique, not null, note: 'Company stock ticker symbol']
+  name varchar(255) [not null]
+  sector varchar(100)
+  industry varchar(100)
+  country varchar(100)
+  created_at timestamptz [default: `now()`]
+  updated_at timestamptz [default: `now()`]
+
+  indexes {
+    ticker
+  }
+}
+
+// Financial statements with quarterly data
+Table financial_statements {
+  id uuid [pk, default: `gen_random_uuid()`]
+  company_id uuid [not null, ref: > companies.id, note: 'References companies table']
+  statement_type varchar(20) [not null, note: 'income, balance, cash_flow']
+  fiscal_year int [not null]
+  fiscal_quarter int [not null]
+  data jsonb [not null]
+  created_at timestamptz [default: `now()`]
+
+  indexes {
+    (company_id)
+    (company_id, statement_type, fiscal_year, fiscal_quarter) [unique]
+  }
+}
+
+// Financial ratios and metrics
+Table financial_ratios {
+  id uuid [pk, default: `gen_random_uuid()`]
+  company_id uuid [not null, ref: > companies.id]
+  date date [not null]
+  pe_ratio decimal
+  pb_ratio decimal
+  debt_to_equity decimal
+  current_ratio decimal
+  quick_ratio decimal
+  roa decimal
+  roe decimal
+  created_at timestamptz [default: `now()`]
+
+  indexes {
+    (company_id, date) [unique]
+  }
+}
+
+// Daily market data
+Table market_data {
+  id uuid [pk, default: `gen_random_uuid()`]
+  company_id uuid [not null, ref: > companies.id]
+  date date [not null]
+  open decimal [not null]
+  high decimal [not null]
+  low decimal [not null]
+  close decimal [not null]
+  volume bigint [not null]
+  created_at timestamptz [default: `now()`]
+
+  indexes {
+    (company_id, date) [unique]
+  }
+}
+
+// Technical analysis indicators
+Table technical_indicators {
+  id uuid [pk, default: `gen_random_uuid()`]
+  company_id uuid [not null, ref: > companies.id]
+  date date [not null]
+  rsi decimal
+  stochastic_k decimal
+  stochastic_d decimal
+  sma_50 decimal
+  sma_200 decimal
+  created_at timestamptz [default: `now()`]
+
+  indexes {
+    (company_id, date) [unique]
+  }
+}
+
+// Market-wide sentiment indicators
+Table market_sentiment {
+  id uuid [pk, default: `gen_random_uuid()`]
+  date date [not null]
+  overall_mood decimal [note: 'Scale from -1 to 1']
+  volume_indicator decimal
+  trend_strength decimal
+  created_at timestamptz [default: `now()`]
+
+  indexes {
+    date [unique]
+  }
+}
