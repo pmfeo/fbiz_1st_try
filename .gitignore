@@ -1,8 +1,7 @@
 .venv/
 .vscode/
 **/.vscode/
-.github/
 __pycache__/
-.pytest_cache/doc
+.pytest_cache/
 .env
 
